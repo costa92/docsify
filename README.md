@@ -64,4 +64,67 @@ foreach(makeRange(10000) as $i){
     }
 ```
  总结：在PHP处理文件大小只允许1GB的内存！如果小于1GB的文件，可以使用普通方法，读取全部文件！再循环处理，但是如果超过1GB，只能使用上面一种方式处理。
+ 
+ 
+### 创建闭包
+ 
+ **简单闭包例子：**
+    
+   
+``` <?php
+        $closure = function($name){
+           return sprintf("Hello %s",$name);
+        };
+
+        echo $closure("costa92");
+```
+
+这个一种是闭包函数与普通的函数相似，使用也有相同，不过匿名函数没有名称
+
+
+**在array_map()函数使用闭包**
+
+  
+``` <?php
+        $numbersPlusOne  = array_map(function($number){
+             return $number+1;
+        },[1,2,3]);
+
+        print_r($numbersPlusOne);
+```
+
+  传统的使用方式：
+    
+    
+```<?php
+         //实现具名回调
+        function incrementNumber($number){
+            return $number+1;
+        }
+        
+        //使用具名回调
+        $numbersPlusOne = array_map('incrementNumber',[1,2,3]);
+        print_r($numbersPlusOne);
+```
+            
+    总结：在没有出现闭包之前，只能使用传统的方式，但是效率没有使用闭包那么高！
+    
+    
+ **附加状态**
+      
+      使用use关键附加闭包的状态
+      
+    
+```  <?php
+        
+            function enclosePerson($name){
+               return function($doCommand) use ($name){
+                   return sprintf('%s,%s',$name,$doCommand);
+                 };  
+            }
+
+            $clay = enclosePerson('Clay');
+            echo $clay("get me sweet tea");
+```
+                 
 
