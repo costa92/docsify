@@ -127,4 +127,9 @@ foreach(makeRange(10000) as $i){
             echo $clay("get me sweet tea");
 ```
                  
+                 
+# [镜像文件地址](/image/link.md)
+
+ 
+
 
