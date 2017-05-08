@@ -24,3 +24,10 @@ Linux/Mac：#
     wget https://dl.laravel-china.org/composer.phar -O /usr/local/bin/composer
     chmod a+x /usr/local/bin/composer
 
+
+###安装Laravel 版本
+
+composer create-project laravel/laravel your-project-name --prefer-dist "5.1.*"
+
+将5.1.*改下相应的下载版本！
+
