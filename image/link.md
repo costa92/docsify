@@ -27,7 +27,7 @@ Linux/Mac：#
 
 ###安装Laravel 版本
 
-composer create-project laravel/laravel your-project-name --prefer-dist "5.1.*"
+`composer create-project laravel/laravel your-project-name --prefer-dist "5.1.*"`
 
 将5.1.*改下相应的下载版本！
 
